@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ITMD-543 Midterm</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -22,8 +22,8 @@
             </div>
             <div class="hidden lg:flex lg:gap-x-12" >
                 <a href="#" class="font-semibold leading-6">Home</a>
-                <a href="#" class="font-semibold leading-6">Midterm</a>
                 <a href="#" class="font-semibold leading-6">About Me</a>
+                <a href="#" class="font-semibold leading-6">Project</a>
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
@@ -54,7 +54,7 @@
         </div>
     </header>
     <main>
-        <section class="hero-section mx-auto flex max-w-7xl my-10 py-10">
+        <section class="hero-section mx-auto flex max-w-7xl my-5 py-10">
             <div class="lg:flex  items-center justify-center">
                 <div class="col-span-11 hero-container  pr-10`">
                     <div class="hero-header">
@@ -91,39 +91,44 @@
                         <h3 class="text-xl font-bold text-right">Krish</h3>
                         <h5 class="text-right">Front-End Developer</h5>
                         <p class="mt-5 leading-8">My name is Krishna Sridhar, a passionate frontend developer with 3 years of hands-on experience in building innovative web applications. I have a solid foundation in JavaScript and its various frameworks and libraries, including React, Next.js, and others, which I have leveraged to create user-friendly and high-performance web solutions.</p>
-
-                            <p class="leading-8 mt-2">Currently, I am pursuing a master’s degree in Information Technology and Management at the Illinois Institute of Technology, specializing in web application development. Through this program, I am expanding my technical knowledge and honing my skills in areas like web systems integration, front-end development, and business innovation.</p>
-                            
-                            <p class="leading-8 mt-2">Ahead, my ambition is to build a thriving business in the IT sector, where I can bring creative solutions to the market and drive digital transformation. I am eager to combine my technical expertise with business acumen to become a successful entrepreneur, developing cutting-edge products and services that solve real-world problems in the tech industry.</p>
+                        <p class="leading-8 mt-2">Currently, I am pursuing a master’s degree in Information Technology and Management at the Illinois Institute of Technology, specializing in web application development. Through this program, I am expanding my technical knowledge and honing my skills in areas like web systems integration, front-end development, and business innovation.</p>
+                        <p class="leading-8 mt-2">Ahead, my ambition is to build a thriving business in the IT sector, where I can bring creative solutions to the market and drive digital transformation. I am eager to combine my technical expertise with business acumen to become a successful entrepreneur, developing cutting-edge products and services that solve real-world problems in the tech industry.</p>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <div class="footer-container mx-auto max-w-7xl">
-            <div class="grid grid-cols-4">
-                <div class="about col-span-2">
-                    <h1 class="text-xl">Demo</h1>
-                    <div class="icons mt-4 flex space-x-4">
-                        <ng-icon class="text-xl" name="ionLogoInstagram"></ng-icon>
-                        <ng-icon class="text-xl" name="ionLogoFacebook"></ng-icon>
-                        <ng-icon class="text-xl" name="ionLogoLinkedin"></ng-icon>
-                        <ng-icon class="text-xl" name="ionLogoX"></ng-icon>
-                    </div>
+        <section class="project my-5 mx-auto max-w-7xl">
+            <div class="container">
+                <div class="flex flex-col items-center justify-center">     
+                    <h3 class="text-3xl text-center">Project</h3>
+                    <p class="h-1 w-16 text-center mt-2 bg-black" ></p>
                 </div>
-                <div class="company">
-                    <h3 class="text-lg">Company</h3>
+                <div class="data-container mt-10">
+                    <input type="text" id="table-search" class="border rounded px-2 py-1" placeholder="Search">
+                    <table id="table-data" class="w-full text-sm text-left">
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class=" bg-slate-200  mt-5">
+        <div class="footer-container mx-auto max-w-7xl py-10">
+            <div class="grid grid-cols-2">
+                <div class="about">
+                    <h1 class="text-xl">Krishna</h1>
+                </div>
+                <div class="links">
+                    <h3 class="text-lg">Links</h3>
                     <ul class="list-none opacity-75 mt-4">
-                        <li>Pricing</li>
-                        <li>Help Center</li>
-                        <li>FAQ</li>
-                        <li>Contact</li>
-                        <li>Privacy Policy</li>
+                        <li>Linkedin</li>
+                        <li>Instagram</li>
+                        <li>Resume</li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
