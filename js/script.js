@@ -60,40 +60,52 @@ function renderTable(data){
 }
 
 function sortTable(e){
-    console.log(e, 'event')
     let field = e.target.dataset.field
     let sort = e.target.dataset.sort
-
-
     let sortedData = userData.sort((a, b) => {
         let nameA, nameB
         if(typeof a[field] === 'string'){
             nameA = a[field].toUpperCase();
             nameB = b[field].toUpperCase(); 
         }
+
         if(sort == 'asc'){
             if(nameA < nameB){
                 return -1
             }
-            
-            // code
-        }else if(sort == 'desc'){
             if(nameA > nameB){
+                console.log('desc')
                 return 1
             }
-            field = 'asc'
+        }
+        else if(sort == 'desc'){
+            if(nameA > nameB){
+                return -1
+            }
+            if(nameA < nameB){
+                console.log('desc')
+                return 1
+            }
         }
 
         return 0
     })
 
     renderTable(sortedData)
+
+    let element = document.querySelector(`[data-field=${field}]`)
+    sort == 'asc' ? element.setAttribute('data-sort', 'desc') : element.setAttribute('data-sort', 'asc')
 }
 
 function searchTable(query){
-    let queryLen = query.length
+    query = query.toLowerCase()
     let searchData = userData.filter(user => {
-        return user.name.slice(0,queryLen).toLowerCase() == query
+        return user.name.toLowerCase().includes(query) ||
+               user.username.toLowerCase().includes(query) ||
+               user.phone.toLowerCase().includes(query) ||
+               user.email.toLowerCase().includes(query) ||
+               user.website.toLowerCase().includes(query) ||
+               user.company.name.toLowerCase().includes(query) 
     } )
     renderTable(searchData)
 }

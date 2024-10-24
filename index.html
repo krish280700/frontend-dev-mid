@@ -8,61 +8,24 @@
 </head>
 <body>
     <!-- ==================== Header Section ========================== -->
-    <header class="bg-gray-50">
-        <nav class="mx-auto flex max-w-7xl items-center p-6 lg:px-8" aria-label="Global">
+    <header class="bg-gray-50 sticky top-0">
+        <nav class=" mx-auto flex max-w-7xl items-center p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
-                <a href="#" class="-m-1.5 font-bold p-1.5">Krishna</a>
+                <a href="#home" class="-m-1.5 font-bold p-1.5">Krishna</a>
             </div>
-            <div class="flex lg:hidden">
-                <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Open main menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                </button>
-            </div>
-            <div class="hidden lg:flex lg:gap-x-12" >
-                <a href="#" class="font-semibold leading-6">Home</a>
-                <a href="#" class="font-semibold leading-6">About Me</a>
-                <a href="#" class="font-semibold leading-6">Project</a>
+            <div class="flex gap-x-12" >
+                <a href="#home" class="font-semibold leading-6 ml-6">Home</a>
+                <a href="#aboutme" class="font-semibold leading-6">About Me</a>
+                <a href="#project" class="font-semibold leading-6">Project</a>
             </div>
         </nav>
-
-        <!-- Mobile menu, show/hide based on menu open state. -->
-
-        <div class="lg:hidden" role="dialog" aria-modal="true">
-
-            <!-- Background backdrop, show/hide based on slide-over state. -->
-            <div class="fixed inset-0 z-10"></div>
-            <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-                <a href="#" class="-m-1.5 font-bold p-1.5">Demo</a>
-                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-                </button>
-            </div>
-            <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6 flex flex-col">
-                    <a href="#" class="font-semibold leading-6">About Us</a>
-                </div>
-                <div class="py-6">
-                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
     </header>
 
     <!-- ========================= Main Section ============================ -->
-    <main>
+    <main class="mx-5">
         <!-- ========================= Hero Section ========================= -->
 
-        <section class="hero-section mx-auto flex max-w-7xl my-5 py-10">
+        <section class="hero-section mx-auto flex max-w-7xl my-5 py-10" id="home">
             <div class="lg:flex  items-center justify-center">
                 <div class="col-span-11 hero-container  pr-10`">
                     <div class="hero-header">
@@ -72,7 +35,7 @@
                     </div>
                     <p class="hero-content mt-10 lg:pr-5">Krishna Sridhar</p>
                     <div class="hero-action flex space-x-4 mt-4">
-                        <button class="border rounded-lg bg-black text-white px-4 py-2 hover:shadow-lg hover:bg-slate-700">Go to Project</button>
+                        <a href="#project" class="border rounded-lg bg-black text-white px-4 py-2 hover:shadow-lg hover:bg-slate-700">Go to Project</a>
                         
                     </div>
                 </div>
@@ -87,13 +50,13 @@
         </section>
 
         <!-- ========================= About Section ========================== -->
-        <section class="about  mx-auto max-w-7xl">
+        <section class="about  mx-auto max-w-7xl" id="aboutme">
             <div class="container">
                 <div class="flex flex-col items-center justify-center">     
                     <h3 class="text-3xl text-center">About Me</h3>
                     <p class="h-1 w-16 text-center mt-2 bg-black" ></p>
                 </div>
-                <div class="grid grid-cols-2 items-start my-16">
+                <div class="grid md:grid-cols-2 items-start my-16">
                     <figure class="">
                         <img src="./assets/images/krish.png" class="w-[500px] h-[500px]" alt="my pic">
                     </figure>
@@ -109,16 +72,20 @@
         </section>
 
         <!-- ============================ Project Section ========================== -->
-        <section class="project my-5 mx-auto max-w-7xl">
+        <section class="project my-5 mx-auto max-w-7xl" id="project">
             <div class="container">
                 <div class="flex flex-col items-center justify-center">     
                     <h3 class="text-3xl text-center">Project</h3>
                     <p class="h-1 w-16 text-center mt-2 bg-black" ></p>
+
+                    <p> Global Search & Sort Functionality</p>
                 </div>
                 <div class="data-container mt-10">
                     <input type="text" id="table-search" class="border rounded px-2 py-1" placeholder="Search">
-                    <table id="table-data" class="w-full text-sm text-left">
-                    </table>
+                    <div class="overflow-auto">
+                        <table id="table-data" class="table-auto w-full text-sm text-left overflow-scroll">
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
@@ -126,7 +93,7 @@
 
     <!-- ============================= Footer Section ================================= -->
     <footer class=" bg-slate-100  mt-5">
-        <div class="footer-container mx-auto max-w-7xl py-10">
+        <div class="footer-container mx-auto max-w-7xl py-10 p-6">
             <div class="grid grid-cols-2">
                 <div class="about">
                     <h1 class="text-xl">Krishna</h1>
