@@ -47,12 +47,11 @@ function renderTable(data){
                 <tbody>
                     ${tableData}
                 </tbody>
-    
             `
             
             let elements =  document.getElementsByClassName("field-header")
             Array.from(elements).forEach((element) => {
-                element.addEventListener("click", sortTable())
+                element.addEventListener("click",(e) => sortTable(e))
             })
     }
     else{
@@ -60,12 +59,35 @@ function renderTable(data){
     }
 }
 
-function sortTable(sort, field){
-    if(sort == 'asc'){
+function sortTable(e){
+    console.log(e, 'event')
+    let field = e.target.dataset.field
+    let sort = e.target.dataset.sort
 
-    }else if(sort == 'desc'){
 
-    }
+    let sortedData = userData.sort((a, b) => {
+        let nameA, nameB
+        if(typeof a[field] === 'string'){
+            nameA = a[field].toUpperCase();
+            nameB = b[field].toUpperCase(); 
+        }
+        if(sort == 'asc'){
+            if(nameA < nameB){
+                return -1
+            }
+            
+            // code
+        }else if(sort == 'desc'){
+            if(nameA > nameB){
+                return 1
+            }
+            field = 'asc'
+        }
+
+        return 0
+    })
+
+    renderTable(sortedData)
 }
 
 function searchTable(query){
@@ -77,5 +99,5 @@ function searchTable(query){
 }
 
 function pagination(){
-
+    // Code
 }
